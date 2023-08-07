@@ -1,0 +1,85 @@
+﻿@model IEnumerable<StudentFinalProject.Models.registration>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Registered Students</h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="@Url.Action("Index","Home")">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase">Registered Students</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telno)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.batch.batch1)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.course.course1)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telno)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.batch.batch1)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.course.course1)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>*@
+        </tr>
+    }
+
+
+
+</table>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Click to Enroll", "Create")
+    </div>
+</div>
+
+

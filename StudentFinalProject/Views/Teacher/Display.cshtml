@@ -1,0 +1,217 @@
+﻿@model IEnumerable<StudentFinalProject.Models.teacher>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Teachers</h5>
+            <h1>Meet Our Teachers</h1>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+
+            {
+                <div class="col-md-6 col-lg-3 text-center team mb-4">
+                    <div class="team-item rounded overflow-hidden mb-2">
+                        <div class="team-img position-relative">
+                            @{
+                                var base64 = Convert.ToBase64String(item.photo);
+                                var imgsrc = string.Format("data:photo/gif;base64,{0}", base64);
+                            }
+                            <img class="img-fluid" src="@imgsrc" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-secondary p-4">
+                            <h5>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </h5>
+                            <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                @*@foreach (var item in Model)
+                    {
+                        <div class="col-md-6 col-lg-3 text-center team mb-4">
+                            <div class="team-item rounded overflow-hidden mb-2">
+                                <div class="team-img position-relative">
+                                    @{
+                                        var base64 = Convert.ToBase64String(item.photo);
+                                        var imgsrc = string.Format("data:photo/gif;base64,{0}", base64);
+                                    }
+                                    <img class="img-fluid" src="@imgsrc" alt="">
+                                    <div class="team-social">
+                                        <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <div class="bg-secondary p-4">
+                                    <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                    <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    }*@
+
+                @*@foreach (var item in Model)
+                    {
+                        <div class="col-md-6 col-lg-3 text-center team mb-4">
+                            <div class="team-item rounded overflow-hidden mb-2">
+                                <div class="team-img position-relative">
+                                    @{
+                                        var base64 = Convert.ToBase64String(item.photo);
+                                        var imgsrc = string.Format("data:photo/gif;base64,{0}", base64);
+                                    }
+                                    <img class="img-fluid" src=" @imgsrc " alt="">
+                                    <div class="team-social">
+                                        <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <div class="bg-secondary p-4">
+                                    <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                    <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                                </div>
+                            </div>
+                        </div>
+                     }*@
+                @*<div class="col-md-6 col-lg-3 text-center team mb-4">
+                        <div class="team-item rounded overflow-hidden mb-2">
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="@imgsrc" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-secondary p-4">
+                                <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center team mb-4">
+                        <div class="team-item rounded overflow-hidden mb-2">
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="@imgsrc" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-secondary p-4">
+                                <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center team mb-4">
+                        <div class="team-item rounded overflow-hidden mb-2">
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="@imgsrc" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-secondary p-4">
+                                <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center team mb-4">
+                        <div class="team-item rounded overflow-hidden mb-2">
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="@imgsrc" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-secondary p-4">
+                                <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center team mb-4">
+                        <div class="team-item rounded overflow-hidden mb-2">
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="@imgsrc" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-secondary p-4">
+                                <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                                <p class="m-0">@Html.DisplayFor(modelItem => item.subject)</p>
+                            </div>
+                        </div>
+                    </div>*@
+
+            }
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+@*<p>
+        @Html.ActionLink("Create New", "AddImage")
+    </p>
+    *<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.photo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subject)
+                </td>
+                <td>
+                    @{
+                        var base64 = Convert.ToBase64String(item.photo);
+                        var imgsrc = string.Format("data:photo/gif;base64,{0}", base64);
+                    }
+                    <img src="@imgsrc" style="max-width: 100px; max-height:100px" />
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>*@
